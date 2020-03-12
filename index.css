@@ -112,7 +112,7 @@ body {
   font-size: 3.4rem;
 }
 
-.card p {
+.card p, span {
   font-size: 1.4rem;
   margin-bottom: 3px;
 }
