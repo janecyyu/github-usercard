@@ -46,10 +46,18 @@ function UserCard(userData) {
     profile = document.createElement("span"),
     follower = document.createElement("p"),
     following = document.createElement("p"),
-    bio = document.createElement("p");
+    bio = document.createElement("p"),
+    btnBox = document.createElement("div"),
+    btnOpen = document.createElement("button"),
+    btnClose = document.createElement("button"),
+    cardInside = document.createElement('div'),
+    insideContent = document.createElement('p');
+
   // append them
   cardContainer.append(userImage);
   cardContainer.append(infoBox);
+  cardContainer.append(btnBox);
+  cardContainer.append(cardInside);
   infoBox.append(displayName);
   infoBox.append(userName);
   infoBox.append(location);
@@ -58,11 +66,18 @@ function UserCard(userData) {
   infoBox.append(follower);
   infoBox.append(following);
   infoBox.append(bio);
+  btnBox.append(btnOpen);
+  btnBox.append(btnClose);
+  cardInside.append(insideContent);
+
 
   //add class name
   cardContainer.classList.add("card");
   displayName.classList.add("name");
   userName.classList.add("username");
+  btnBox.classList.add('buttonBox');
+  btnClose.classList.add('hide-btn');
+  cardInside.classList.add('hide-btn');
 
   //add text content
   displayName.textContent = userData.name;
@@ -75,6 +90,17 @@ function UserCard(userData) {
   following.textContent = "following: " + userData.following;
   bio.textContent = "bio: " + userData.bio;
   userImage.src = userData.avatar_url;
+  btnOpen.textContent = "more";
+  btnClose.textContent = "close";
+  insideContent.textContent = "Welcome!";
+
+  //add an event listener for btn
+  btnBox.addEventListener('click', ev => {
+    btnOpen.classList.toggle("hide-btn");
+    btnClose.classList.toggle("hide-btn");
+    cardInside.classList.toggle("card-inside");
+    cardContainer.classList.toggle('toggle-on');
+  })
 
   return cardContainer;
 }

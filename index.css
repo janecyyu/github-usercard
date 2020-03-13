@@ -99,6 +99,7 @@ body {
   box-shadow: 0 1px 6px -2px #000;
   background-color: #FFF;
   margin-bottom: 30px;
+
 }
 
 .card img {
@@ -108,20 +109,39 @@ body {
   margin-right: 20px;
 }
 
+.card .buttonBox{
+margin: 60px;
+
+}
+
 .card .name {
   font-size: 3.4rem;
+
 }
 
 .card p, span {
   font-size: 1.4rem;
   margin-bottom: 3px;
+
 }
 
 .card .username {
   font-size: 1.8rem;
   font-style: italic;
   margin: 3px 0 10px;
+
 }
 
+.hide-btn {
+  display: none;
+}
+.card-inside {
+  display: block;
+  height: 5rem;
+}
+.toggle-on {
+  display: block;
+  height: 400px;
+}
 
 
